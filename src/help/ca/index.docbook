@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY appversion "3.1.0">
+<!ENTITY manrevision "3.0">
+<!ENTITY app "Glade">
+]>
+<!-- 
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Apr 11, 2002
+-->
+<article id="index" lang="ca">
+
+  <articleinfo> 
+    <title>Manual del dissenyador d'interfícies Glade</title> 
+      
+    <abstract role="description"><para>El Glade és un dissenyador d'interfícies d'usuari per a aplicacions GTK+.</para>
+    </abstract>
+
+    <copyright lang="en"> 
+      <year>2006</year> 
+      <holder>Vincent Geddes</holder> 
+    </copyright>
+    <copyright lang="en"> 
+      <year>2004</year>
+      <year>2003</year>
+      <holder>Sun Microsystems</holder> 
+    </copyright> 
+    <copyright lang="en"> 
+      <year>2002</year><year>2000</year> 
+      <holder>Michael Vance</holder> 
+    </copyright> 
+
+    <publisher> 
+      <publishername>Projecte de documentació del GNOME</publishername> 
+    </publisher> 
+
+   <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <authorgroup> 
+      <author role="maintainer" lang="en"> 
+	<firstname>Vincent</firstname> 
+	<surname>Geddes</surname> 
+	<affiliation> 
+	  <orgname>GNOME Documentation Project</orgname>
+	  <address><email>vincent.geddes@gmail.com</email></address>
+	</affiliation>
+      </author> 
+      <author lang="en"> 
+        <firstname>Sun</firstname> 
+        <surname>GNOME Documentation Team</surname> 
+        <affiliation> 
+          <orgname>Sun Microsystems</orgname> 
+        </affiliation> 
+       </author> 
+       <author lang="en"> 
+         <firstname>Michael</firstname> 
+         <surname>Vance</surname> 
+         <affiliation> 
+           <orgname>GNOME Documentation Project</orgname> 
+           </affiliation> 
+       </author> 
+    </authorgroup>
+
+
+<!-- According to GNU FDL, revision history is mandatory if you are -->
+<!-- modifying/reusing someone else's document.  If not, you can omit it. -->
+<!-- Remember to remove the &manrevision; entity from the revision entries other
+-->
+<!-- than the current revision. -->
+<!-- The revision numbering system for GNOME manuals is as follows: -->
+<!-- * the revision number consists of two components -->
+<!-- * the first component of the revision number reflects the release version of the GNOME desktop. -->
+<!-- * the second component of the revision number is a decimal unit that is incremented with each revision of the manual. -->
+<!-- For example, if the GNOME desktop release is V2.x, the first version of the manual that -->
+<!-- is written in that desktop timeframe is V2.0, the second version of the manual is V2.1, etc. -->
+<!-- When the desktop release version changes to V3.x, the revision number of the manual changes -->
+<!-- to V3.0, and so on. -->  
+    <revhistory>
+        <revision lang="en"> 
+		<revnumber>Glade Manual 3.0</revnumber> 
+		<date>5 December 2006</date>
+		<revdescription> 
+	  		<para role="author" lang="en">Vincent Geddes</para>
+	  		<para role="publisher" lang="en">GNOME Documentation Project</para>
+		</revdescription> 
+        </revision>
+        <revision lang="en"> 
+                <revnumber>Glade Manual 2.1;</revnumber> 
+                <date>17 June 2004</date> 
+                <revdescription> 
+                        <para role="author" lang="en">Sun GNOME Documentation Team</para>
+                        <para role="publisher" lang="en">GNOME Documentation Project</para>
+                </revdescription> 
+        </revision>
+        <revision lang="en"> 
+                <revnumber>Glade User Manual 2.0</revnumber> 
+                <date>25 February 2004</date> 
+                <revdescription> 
+                        <para role="author" lang="en">Sun GNOME Documentation Team</para>
+                        <para role="publisher" lang="en">GNOME Documentation Project</para>
+                </revdescription> 
+        </revision>             
+        <revision lang="en"> 
+                <revnumber>Glade User Manual 1.2</revnumber> 
+                <date>10 Feb 2004</date> 
+                <revdescription> 
+                        <para role="author" lang="en">Sun GNOME Documentation Team</para>
+                        <para role="publisher" lang="en">GNOME Documentation Project</para>
+                </revdescription> 
+        </revision>  
+        <revision lang="en"> 
+                <revnumber>Glade User Manual 1.1</revnumber> 
+                <date>30 Mar 2002</date> 
+                <revdescription> 
+                        <para role="author" lang="en"> Michael Vance</para>
+                        <para role="publisher" lang="en">GNOME Documentation Project</para>
+                </revdescription> 
+        </revision> 
+        <revision lang="en"> 
+                <revnumber>Glade User Manual 1.0</revnumber> 
+                <date>11 May 2000</date> 
+                <revdescription> 
+                        <para role="author" lang="en">Michael Vance</para>
+                        <para role="publisher" lang="en">GNOME Documentation Project</para>
+                </revdescription> 
+        </revision> 
+    </revhistory> 
+
+    <releaseinfo>Aquest manual descriu la versió 3.1.0 del Glade.</releaseinfo> 
+    <legalnotice> 
+      <title>Comentaris</title> 
+      <para lang="en">To report a bug or make a suggestion regarding the Glade application or
+      this manual, follow the directions in the <ulink url="help:gnome-feedback" type="help">GNOME Feedback Page</ulink>.
+      </para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  </articleinfo> 
+
+    <indexterm lang="en"><primary>glade</primary></indexterm>
+    <indexterm lang="en"><primary>user interface designer</primary></indexterm>
+
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <sect1 id="introduction"> 
+    <title>Introducció</title> 
+
+    <para>El dissenyador d'interfícies <application>Glade</application> us permet crear i editar dissenys d'interfícies d'usuari per a aplicacions <application>GTK+</application>.</para>
+
+    <para>La biblioteca GTK+ ofereix una àmplia col·lecció d'elements amb els quals construir interfícies d'usuari, com ara quadres de text, quadres de diàleg, caselles de selecció i menús. Aquests elements s'anomenen <emphasis>ginys</emphasis>. Podeu utilitzar el Glade per posicionar els ginys dins d'una interfície gràfica. El Glade us permet modificar la disposició i propietats d'aquests ginys. També podeu utilitzar el Glade per afegir connexions entre els ginys i el codi font de l'aplicació.</para>
+
+    <para>Les interfícies d'usuari dissenyades al Glade s'emmagatzemen utilitzant un format XML, facilitant-ne la integració amb eines externes. Podeu utilitzar la biblioteca <application>libglade</application> per crear aquestes interfícies gràfiques de forma dinàmica des de la descripció en XML.</para>
+
+  </sect1>
+
+  <sect1 id="getting-started"> 
+    <title>Primers passos</title> 
+
+    <sect2 id="glade-start">
+    <title>Per iniciar el <application>Glade</application></title>
+    <para>Podeu iniciar el <application>Glade</application> de les maneres següents:</para> 
+    <variablelist>
+    	<varlistentry>
+    		<term>Menú d'<guimenu>Aplicacions</guimenu></term>
+    		<listitem>
+    		<para lang="en">Choose 
+    		<menuchoice>
+    		<guisubmenu>Programming</guisubmenu>
+    		<guimenuitem>Glade Interface Designer</guimenuitem>
+    		</menuchoice>. </para>
+    		</listitem>
+    	</varlistentry>
+    	<varlistentry>
+    		<term>Línia d'ordres</term>
+    		<listitem>
+    		<para>Per iniciar el <application>Glade</application> des d'una línia d'ordres,escriviu l'ordre següent i a continuació, premeu la tecla de <keycap>Retorn</keycap>: <command>glade-3</command></para>	 
+    		</listitem>
+    	</varlistentry>
+    </variablelist>
+    </sect2>
+
+    <sect2 id="glade-when-start">
+    <title>Quan inicieu el <application>Glade</application></title>
+    <para>Quan inicieu el <application>Glade</application>, es mostra la finestra següent.</para>
+
+        <figure id="main-window-fig"> 
+          <title>Finestra del <application>Glade</application></title> 
+            <screenshot> 
+              <mediaobject lang="en">
+                <imageobject><imagedata fileref="figures/main-window.png" format="PNG"/></imageobject>
+                <textobject><phrase>Shows the<application>Glade</application> window.</phrase></textobject> 
+              </mediaobject> 
+            </screenshot> 
+        </figure>
+        
+        <para>La finestra del <application>Glade</application> conté els elements següents:</para>
+
+        <variablelist>
+          <varlistentry> <term>Barra de menús</term>
+            <listitem>
+            <para>Els menús que apareixen a la barra de menús contenen totes les ordres que necessiteu per treballar amb fitxers al <application>Glade</application>.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry> <term>Barra d'eines</term>
+            <listitem>
+            <para>La barra d'eines conté un subconjunt de les ordres a les quals podeu accedir des de la barra de menús.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry> <term>Àrea de disseny</term>
+            <listitem>
+            <para>L'àrea de disseny és on es pot editar visualment la interfície d'usuari.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry> <term>Paleta</term>
+            <listitem>
+            <para>La paleta conté tots els ginys que es poden utilitzar per construir una interfície d'usuari.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry> <term>Inspector</term>
+            <listitem>
+            <para>L'inspector mostra informació sobre els ginys que hi ha en un projecte.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry> <term>Editor de propietats</term>
+            <listitem>
+            <para>L'editor de propietats s'utilitza per manipular les propietats dels ginys i per afegir connexions al codi font.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry> <term>Barra d'estat</term>
+            <listitem>
+            <para>La barra d'estat mostra informació sobre l'activitat actual del <application>Glade</application> i informació contextual sobre els elements dels menús.</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+
+    </sect2>
+  </sect1>
+
+  <sect1 id="working-with-projects"> 
+         <title>Com treballar amb projectes</title> 
+  
+ 
+<!-- To Create a New Project  -->
+	 <sect2 id="glade-create-new-project"> 
+		<title>Com crear un projecte nou</title>
+		<para>Per crear un projecte nou, escolliu <menuchoice><guimenu>Fitxer</guimenu><guimenuitem>Nou</guimenuitem></menuchoice>. L'aplicació mostrarà un projecte nou en blanc a la finestra del <application>Glade</application>.</para>
+	 </sect2>
+
+	 <sect2 id="glade-open-project"> 
+		<title>Com obrir un projecte</title>
+		<para>Per obrir un projecte existent, seleccioneu <menuchoice><guimenu>Fitxer</guimenu><guimenuitem>Obre</guimenuitem></menuchoice>. L'aplicació mostrarà el projecte a la finestra del <application>Glade</application>.</para>
+	 </sect2>
+
+<!-- To Save a Project -->
+	 <sect2 id="glade-save-project"> 
+		<title>Com desar un projecte</title>
+		<para>Podeu desar un projecte de les maneres següents:</para>
+		<itemizedlist> 
+		  <listitem><para>Per desar els canvis d'un projecte que ja existeix, seleccioneu <menuchoice><guimenu>Fitxer</guimenu><guimenuitem>Desa</guimenuitem></menuchoice>.</para>
+		  </listitem>
+		  <listitem><para lang="en">To save a new project file or to save an existing project file under a new filename, choose <menuchoice> <guimenu>File</guimenu> <guimenuitem>Save As</guimenuitem> </menuchoice>. Enter a name for the project file in the <guilabel>Save As</guilabel> dialog, then click <guibutton>Save</guibutton>. </para>
+		  </listitem>
+		</itemizedlist>
+	 </sect2>
+  </sect1>
+
+
+  <sect1 id="working-with-widgets"> 
+         <title>Com treballar amb ginys</title>
+         <sect2 id="select-widgets-palette">
+                <title>Com seleccionar ginys de la paleta</title>
+                <para>Podeu treballar amb els ginys de la <guilabel>Paleta</guilabel> de les maneres següents:</para>
+                <variablelist> 
+                  <varlistentry> 
+                         <term>Mode «selecció»</term> 
+                         <listitem>
+                                <para>Per utilitzar el mode «selecció», feu clic a la fletxa <guilabel>Selectora</guilabel>. El punter canvia i es converteix en una fletxa per tal d'indicar que el mode «selecció» està actiu. Dins d'aquest mode, podeu utilitzar el ratolí per seleccionar ginys del vostre projecte. Tot seguit, podeu utilitzar la finestra de <guilabel>Propietats</guilabel> per tal d'editar les propietats dels ginys.</para>
+<para>També podeu utilitzar el menú contextual de ginys per seleccionar-ne un. Feu clic amb el botó secundari sobre un giny per tal d'obrir-ne el menú contextual.</para><para>Podeu afegir múltiples ginys d'un tipus determinat des de la <guilabel>Paleta</guilabel> al projecte tot mantenint premuda la tecla <keycap>Control</keycap> en seleccionar el giny. Cal que feu clic a la fletxa <guilabel>Selector</guilabel> o a qualsevol altre giny de la <guilabel>Paleta</guilabel> per tornar al mode normal.</para>
+                         </listitem> 
+                  </varlistentry> 
+                </variablelist> 
+                <variablelist> 
+                  <varlistentry> 
+                         <term>Mode de posicionament de ginys</term> 
+                         <listitem> 
+                                <para>Per utilitzar el mode de posicionament de ginys, seleccioneu un giny de la <guilabel>Paleta</guilabel>. Quan en seleccioneu més d'un, el punter canvia i es converteix en un punter amb el símbol de suma (+). D'aquesta manera podeu posicionar els ginys dins de contenidors, ginys d'alt nivell, etc. Després de posicionar un giny, el mode torna al mode de selecció.</para>
+                         </listitem> 
+                  </varlistentry> 
+                </variablelist> 
+                <variablelist> 
+                  <varlistentry> 
+                         <term>Mode de posicionament d'alt nivell</term> 
+                         <listitem> 
+                                <para>Per utilitzar el mode de posicionament d'alt nivell, seleccioneu un giny d'alt nivell de la <application>Paleta</application>. Un cop seleccionat, el giny apareixerà immediatament a l'escriptori. Aleshores podreu editar el giny. Després de seleccionar el giny d'alt nivell, el mode torna al mode de selecció.</para>
+                         </listitem> 
+                  </varlistentry> 
+                </variablelist> 
+         </sect2>
+<sect2 id="organize-widgets">
+<title>Com organitzar els ginys al projecte</title>
+<para>Per maquetar i organitzar els ginys a la finestra del projecte podeu utilitzar contenidors de ginys o caixes. Podeu seleccionar els ginys contenidors següents de la <guilabel>Paleta</guilabel>:</para>
+<itemizedlist>
+<listitem><para>Caixa horitzontal</para>
+</listitem><listitem><para>Caixa vertical</para></listitem>
+<listitem><para>Taula</para></listitem>
+<listitem><para>Posicions fixes</para></listitem>
+<listitem><para>Caixa horitzontal de botons</para></listitem>
+<listitem><para>Caixa vertical de botons</para></listitem>
+<listitem><para>Subfinestres horitzontals</para></listitem>
+<listitem><para>Subfinestres verticals</para></listitem>
+<listitem><para>Bloc de notes</para></listitem>
+<listitem><para>Marc</para></listitem>
+<listitem><para>Finestra amb desplaçament</para></listitem>
+<listitem><para>Subàrea de visualització</para></listitem>
+</itemizedlist>
+<para>Podeu combinar les caixes com vulgueu per crear estructures de disposicions complexes. Quan creeu caixes horitzontals i verticals, el <application>Glade</application> us demana quantes columnes i files ha de crear inicialment, tot i que sempre podreu afegir-ne de noves o suprimir les que no us interessin.</para>
+<para>Un cop heu creat totes les caixes que necessiteu, podeu afegir-hi ginys concrets com etiquetes, botons o ginys més complicats. Fixeu-vos que el <application>Glade</application> posiciona els ginys segons la maquetació, estalviant-vos bona part de la feina més pesada. L'ús de les caixes permet a les finestres canviar la mida perquè es mostrin etiquetes de diferents mides en diferents idiomes quan es localitzi l'aplicació.</para></sect2>
+         <sect2 id="place-widgets-clipboard"> 
+                <title>Com posicionar un giny al porta-retalls</title> 
+                <para lang="en">
+                  To remove a widget from a parent and place the widget on
+the clipboard,
+                  select the widget then choose 
+                  <menuchoice> 
+                         <guimenu>Edit</guimenu> 
+                         <guisubmenu>Cut</guisubmenu> 
+                  </menuchoice>. 
+                </para>
+         </sect2> 
+         <sect2 id="copy-widget-clipboard"> 
+                <title>Com copiar un giny al porta-retalls</title> 
+                <para lang="en">
+                  To copy a widget to the clipboard, select the widget then
+choose 
+                  <menuchoice> 
+                         <guimenu>Edit</guimenu> 
+                         <guisubmenu>Copy</guisubmenu> 
+                  </menuchoice>. The original widget remains attached to
+the parent. 
+                </para>
+         </sect2> 
+         <sect2 id="paste-widget-clipboard"> 
+                <title>Com enganxar un giny des del porta-retalls al projecte</title> 
+                <para lang="en">
+                  To paste a widget that exists on the clipboard into your
+project,
+                  choose 
+                  <menuchoice> 
+                         <guimenu>Edit</guimenu> 
+                         <guisubmenu>Paste</guisubmenu> 
+                  </menuchoice>.</para><para>Tots els ginys han de tenir un nom únic dins del <application>Glade</application>. Si retalleu un giny i l'enganxeu al projecte, aleshores el giny i tots els seus fills mantindran els seus noms originals. Si el copieu o l'enganxeu múltiples vegades al projecte, aleshores el <application>Glade</application> generarà noms nous per a les còpies del giny.</para>
+         </sect2> 
+         <sect2 id="delete-widget"> 
+                <title>Com suprimir un giny</title> 
+                <para lang="en">To delete a widget from the parent without
+                  moving the widget to the clipboard, 
+                                select the widget then 
+                                choose 
+                                <menuchoice> 
+                                  <guimenu>Edit</guimenu> 
+                                  <guisubmenu>Delete</guisubmenu> 
+                                </menuchoice>. 
+                         </para>
+                 
+         </sect2> 
+         
+         <sect2 id="edit-widget"> 
+                <title>Com canviar una propietat d'un giny</title> 
+                <para>Utilitzeu l'editor de propietats per editar les propietats del giny seleccionat. Per canviar una propietat d'un giny, seleccioneu el giny i introduïu el valor corresponent en un dels camps que trobareu a la subfinestra de propietats.</para>
+                
+                
+         </sect2> 
+  </sect1>
+  
+<sect1 id="about"> 
+    <title>Quant al Glade</title> 
+    <para>Els desenvolupadors del Glade i voluntaris de la comunitat GNOME són qui s'encarreguen de mantenir el Glade. Per tal de trobar més informació sobre el Glade, visiteu el <ulink url="http://glade.gnome.org" type="http">lloc web del Glade</ulink>.</para>
+    <para>Per informar d'un error o fer algun suggeriment sobre aquesta aplicació o aquest manual, feu-ho a través del <ulink url="http://bugzilla.gnome.org/enter_bug.cgi?product=glade3" type="http">bugzilla</ulink>.</para>
+
+    <para>Les llistes de correu de l'<ulink url="http://lists.ximian.com/mailman/listinfo/glade-users" type="http">usuari</ulink> i del <ulink url="http://lists.ximian.com/mailman/listinfo/glade-devel" type="http">desenvolupador</ulink> també són unes excel·lents fonts d'informació. A part de subscriure-us-hi, també podeu consultar els arxius de les llistes, que trobareu disponibles en aquests mateixos enllaços.</para>
+
+    <para lang="en"> This program is distributed under the terms of the GNU
+      General Public license as published by the Free Software
+      Foundation; either version 2 of the License, or (at your option)
+      any later version. A copy of this license can be found at this
+      <ulink url="help:gpl" type="help">link</ulink>, or in the file
+      COPYING included with the source code of this program. </para>
+  </sect1> 
+
+</article>

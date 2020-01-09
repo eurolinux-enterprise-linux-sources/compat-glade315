@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY appversion "3.1.0">
+<!ENTITY manrevision "3.0">
+<!ENTITY app "Glade">
+]>
+<!-- 
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Apr 11, 2002
+-->
+<article id="index" lang="uk">
+
+  <articleinfo> 
+    <title>Інструкція з використання редактора інтерфейсу Glade</title> 
+      
+    <abstract role="description"><para>Glade - редактор інтерфейсу користувача для програм GTK +.</para>
+    </abstract>
+
+    <copyright lang="en"> 
+      <year>2006</year> 
+      <holder>Vincent Geddes</holder> 
+    </copyright>
+    <copyright lang="en"> 
+      <year>2004</year>
+      <year>2003</year>
+      <holder>Sun Microsystems</holder> 
+    </copyright> 
+    <copyright lang="en"> 
+      <year>2002</year><year>2000</year> 
+      <holder>Michael Vance</holder> 
+    </copyright> 
+
+    <publisher> 
+      <publishername>Проект документування GNOME</publishername> 
+    </publisher> 
+
+   <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <authorgroup> 
+      <author role="maintainer" lang="en"> 
+	<firstname>Vincent</firstname> 
+	<surname>Geddes</surname> 
+	<affiliation> 
+	  <orgname>GNOME Documentation Project</orgname>
+	  <address><email>vincent.geddes@gmail.com</email></address>
+	</affiliation>
+      </author> 
+      <author lang="en"> 
+        <firstname>Sun</firstname> 
+        <surname>GNOME Documentation Team</surname> 
+        <affiliation> 
+          <orgname>Sun Microsystems</orgname> 
+        </affiliation> 
+       </author> 
+       <author lang="en"> 
+         <firstname>Michael</firstname> 
+         <surname>Vance</surname> 
+         <affiliation> 
+           <orgname>GNOME Documentation Project</orgname> 
+           </affiliation> 
+       </author> 
+    </authorgroup>
+
+
+<!-- According to GNU FDL, revision history is mandatory if you are -->
+<!-- modifying/reusing someone else's document.  If not, you can omit it. -->
+<!-- Remember to remove the &manrevision; entity from the revision entries other
+-->
+<!-- than the current revision. -->
+<!-- The revision numbering system for GNOME manuals is as follows: -->
+<!-- * the revision number consists of two components -->
+<!-- * the first component of the revision number reflects the release version of the GNOME desktop. -->
+<!-- * the second component of the revision number is a decimal unit that is incremented with each revision of the manual. -->
+<!-- For example, if the GNOME desktop release is V2.x, the first version of the manual that -->
+<!-- is written in that desktop timeframe is V2.0, the second version of the manual is V2.1, etc. -->
+<!-- When the desktop release version changes to V3.x, the revision number of the manual changes -->
+<!-- to V3.0, and so on. -->  
+    <revhistory>
+        <revision lang="en"> 
+		<revnumber>Glade Manual 3.0</revnumber> 
+		<date>5 December 2006</date>
+		<revdescription> 
+	  		<para role="author" lang="en">Vincent Geddes</para>
+	  		<para role="publisher" lang="en">GNOME Documentation Project</para>
+		</revdescription> 
+        </revision>
+        <revision lang="en"> 
+                <revnumber>Glade Manual 2.1;</revnumber> 
+                <date>17 June 2004</date> 
+                <revdescription> 
+                        <para role="author" lang="en">Sun GNOME Documentation Team</para>
+                        <para role="publisher" lang="en">GNOME Documentation Project</para>
+                </revdescription> 
+        </revision>
+        <revision lang="en"> 
+                <revnumber>Glade User Manual 2.0</revnumber> 
+                <date>25 February 2004</date> 
+                <revdescription> 
+                        <para role="author" lang="en">Sun GNOME Documentation Team</para>
+                        <para role="publisher" lang="en">GNOME Documentation Project</para>
+                </revdescription> 
+        </revision>             
+        <revision lang="en"> 
+                <revnumber>Glade User Manual 1.2</revnumber> 
+                <date>10 Feb 2004</date> 
+                <revdescription> 
+                        <para role="author" lang="en">Sun GNOME Documentation Team</para>
+                        <para role="publisher" lang="en">GNOME Documentation Project</para>
+                </revdescription> 
+        </revision>  
+        <revision lang="en"> 
+                <revnumber>Glade User Manual 1.1</revnumber> 
+                <date>30 Mar 2002</date> 
+                <revdescription> 
+                        <para role="author" lang="en"> Michael Vance</para>
+                        <para role="publisher" lang="en">GNOME Documentation Project</para>
+                </revdescription> 
+        </revision> 
+        <revision lang="en"> 
+                <revnumber>Glade User Manual 1.0</revnumber> 
+                <date>11 May 2000</date> 
+                <revdescription> 
+                        <para role="author" lang="en">Michael Vance</para>
+                        <para role="publisher" lang="en">GNOME Documentation Project</para>
+                </revdescription> 
+        </revision> 
+    </revhistory> 
+
+    <releaseinfo>В цьому посібнику описується Glade версії 3.1.0.</releaseinfo> 
+    <legalnotice> 
+      <title>Зворотній зв'язок</title> 
+      <para lang="en">To report a bug or make a suggestion regarding the Glade application or
+      this manual, follow the directions in the <ulink url="help:gnome-feedback" type="help">GNOME Feedback Page</ulink>.
+      </para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  </articleinfo> 
+
+    <indexterm lang="en"><primary>glade</primary></indexterm>
+    <indexterm lang="en"><primary>user interface designer</primary></indexterm>
+
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <sect1 id="introduction"> 
+    <title>Вступ</title> 
+
+    <para>Редактор користувацького інтерфейсу <application>Glade</application> дозволяє Вам створювати та редагувати інтерфейси користувача програм <application>GTK+</application>.</para>
+
+    <para>Бібліотека GTK + надає велику колекцію будівельних блоків для створення інтерфейсу користувача, таких як текстові поля, поля введення чисел, зринаючі діалогові вікна, прапорці та меню. Ці блоки називаються  <emphasis>віджетами</emphasis>. Ви можете використовувати Glade, щоб розташовувати віджети в графічному інтерфейсі користувача. Glade дозволяє змінювати розташування та властивості віджетів. Також, можете використовувати Glade, для додавання зв'язків між віджетами та вихідним кодом програми.</para>
+
+    <para>Інтерфейс користувача, створений в Glade, зберігається в форматі XML, що дозволяє значно спростити інтеграцію зі зовнішніми інструментами. Ви можете використовувати бібліотеку <application>libglade</application> для того, щоб динамічно створювати інтерфейс користувача з опису мовою XML.</para>
+
+  </sect1>
+
+  <sect1 id="getting-started"> 
+    <title>Приступаючи до роботи</title> 
+
+    <sect2 id="glade-start">
+    <title>Запуск <application>Glade</application></title>
+    <para>Ви можете запустити <application>Glade</application> наступними способами:</para> 
+    <variablelist>
+    	<varlistentry>
+    		<term>Меню <guimenu>Програми</guimenu></term>
+    		<listitem>
+    		<para lang="en">Choose 
+    		<menuchoice>
+    		<guisubmenu>Programming</guisubmenu>
+    		<guimenuitem>Glade Interface Designer</guimenuitem>
+    		</menuchoice>. </para>
+    		</listitem>
+    	</varlistentry>
+    	<varlistentry>
+    		<term>Командний рядок</term>
+    		<listitem>
+    		<para>Щоб запустити <application>Glade</application> з командного рядка, введіть команду <command>glade-3</command> і натисніть <keycap>Enter</keycap></para>	 
+    		</listitem>
+    	</varlistentry>
+    </variablelist>
+    </sect2>
+
+    <sect2 id="glade-when-start">
+    <title>Коли Ви запускаєте <application>Glade</application></title>
+    <para>Коли Ви запускаєте <application>Glade</application>, з'являється наступне вікно.</para>
+
+        <figure id="main-window-fig"> 
+          <title>Вікно <application>Glade</application></title> 
+            <screenshot> 
+              <mediaobject lang="en">
+                <imageobject><imagedata fileref="figures/main-window.png" format="PNG"/></imageobject>
+                <textobject><phrase>Shows the<application>Glade</application> window.</phrase></textobject> 
+              </mediaobject> 
+            </screenshot> 
+        </figure>
+        
+        <para>Вікно <application>Glade</application> містить наступні елементи:</para>
+
+        <variablelist>
+          <varlistentry> <term>Головне меню</term>
+            <listitem>
+            <para>Меню в головному меню містить всі команди, які необхідні Вам для роботи з файлами в <application>Glade</application>.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry> <term>Панель інструментів</term>
+            <listitem>
+            <para>Панель інструментів містить частину команд, до яких ви маєте доступ з головного меню.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry> <term>Область для конструювання</term>
+            <listitem>
+            <para>Область конструювання де можна візуально редагувати інтерфейс користувача.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry> <term>Палітра</term>
+            <listitem>
+            <para>Палітра містить віджети, які можуть бути використані для створення інтерфейсу користувача.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry> <term>Структура проекту</term>
+            <listitem>
+            <para>Вікно структури проекту, яке відображає інформацію про віджети в проекті.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry> <term>Редактор властивостей</term>
+            <listitem>
+            <para>Редактор властивостей дозволяє маніпулювати властивостями віджетів, а також додавати зв'язки до вихідного коду.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry> <term>Рядок стану</term>
+            <listitem>
+            <para>Рядок стану відображає інформацію про поточну діяльність <application>Glade</application> та контекстну інформацію про елементи меню.</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+
+    </sect2>
+  </sect1>
+
+  <sect1 id="working-with-projects"> 
+         <title>Робота з проектами</title> 
+  
+ 
+<!-- To Create a New Project  -->
+	 <sect2 id="glade-create-new-project"> 
+		<title>Створення нового проекту</title>
+		<para>Щоб створити новий проект, виберіть <menuchoice><guimenu>Файл</guimenu><guimenuitem>Новий</guimenuitem></menuchoice>. Програма покаже новий порожній проект в вікні <application>Glade</application>.</para>
+	 </sect2>
+
+	 <sect2 id="glade-open-project"> 
+		<title>Відкривання проекту</title>
+		<para>Щоб відкрити існуючий проект, виберіть <menuchoice><guimenu>Файл</guimenu><guimenuitem>Відкрити</guimenuitem></menuchoice>. Програма відкриє проект в вікні <application>Glade</application>.</para>
+	 </sect2>
+
+<!-- To Save a Project -->
+	 <sect2 id="glade-save-project"> 
+		<title>Збереження проекту</title>
+		<para>Ви можете зберігати проекти наступним чином:</para>
+		<itemizedlist> 
+		  <listitem><para>Щоб зберегти зміни в поточному файлі проекту виберіть <menuchoice><guimenu>Файл</guimenu><guimenuitem>Зберегти</guimenuitem></menuchoice>.</para>
+		  </listitem>
+		  <listitem><para lang="en">To save a new project file or to save an existing project file under a new filename, choose <menuchoice> <guimenu>File</guimenu> <guimenuitem>Save As</guimenuitem> </menuchoice>. Enter a name for the project file in the <guilabel>Save As</guilabel> dialog, then click <guibutton>Save</guibutton>. </para>
+		  </listitem>
+		</itemizedlist>
+	 </sect2>
+  </sect1>
+
+
+  <sect1 id="working-with-widgets"> 
+         <title>Робота з віджетами</title>
+         <sect2 id="select-widgets-palette">
+                <title>Вибір віджетів з вікна палітри</title>
+                <para>Ви можете працювати з віджетами в вікні <guilabel>Палітра</guilabel> наступним чином:</para>
+                <variablelist> 
+                  <varlistentry> 
+                         <term>Режим виділення</term> 
+                         <listitem>
+                                <para>Щоб використовувати режим вибору, натисніть на стрілку<guilabel>Виділення</guilabel>. Вказівник зміниться на стрілку, і це означає, що режим виділення активний. В цьому режимі, можна використовувати мишку для вибору віджетів в Вашому проекті. Ви можете використовувати вікно <guilabel>Властивості</guilabel> для редагування властивостей віджетів.</para>
+<para>Ви також можете використовувати контекстне меню для вибору віджету. Клацніть правою кнопкою мишки на віджет, щоб відкрити контекстне меню віджету.</para><para>Ви можете додавати безліч віджетів потрібного вигляду в проект з <guilabel>Палітри</guilabel>, утримуючи клавішу <keycap>Ctrl</keycap> в момент вибору віджету. Вам необхідно клацнути на стрілці <guilabel>Виділення</guilabel> або іншому віджеті в <guilabel>Палітрі</guilabel>, щоб повернутись до звичайного режиму.</para>
+                         </listitem> 
+                  </varlistentry> 
+                </variablelist> 
+                <variablelist> 
+                  <varlistentry> 
+                         <term>Режим розташування віджету</term> 
+                         <listitem> 
+                                <para>Для використання режиму розміщення, виберіть віджет у вікні <guilabel>Палітра</guilabel>. Під час вибору більшої частини віджетів вказівник змінюється на вказівник з хрестиком. Після цього можете додавати віджети в контейнери, у віджети верхнього рівня і таке інше. Після того, як Ви розмістите віджет, режим розміщення перемикається в режим виділення.</para>
+                         </listitem> 
+                  </varlistentry> 
+                </variablelist> 
+                <variablelist> 
+                  <varlistentry> 
+                         <term>Режим розташування на верхньому рівні</term> 
+                         <listitem> 
+                                <para>Для використання режиму розташування верхнього рівня , виберіть визначений віджет верхнього рівня в вікні <application>Палітри</application> і віджет безпосередньо з'явиться на Вашій стільниці. Потім можете редагувати його. Після вибору віджету верхнього рівня, режим розташування повертається знову в режим виділення.</para>
+                         </listitem> 
+                  </varlistentry> 
+                </variablelist> 
+         </sect2>
+<sect2 id="organize-widgets">
+<title>Влаштування віджетів в проекті</title>
+<para>Ви можете використовувати контейнери віджетів для розташування та організації віджетів у вікні проекту. Також можете вибрати з вікна <guilabel>Палітра</guilabel> наступні контейнери віджетів:</para>
+<itemizedlist>
+<listitem><para>Горизонтальний контейнер</para>
+</listitem><listitem><para>Вертикальний контейнер</para></listitem>
+<listitem><para>Таблиця</para></listitem>
+<listitem><para>Фіксовані позиції</para></listitem>
+<listitem><para>Горизонтальна група кнопок</para></listitem>
+<listitem><para>Вертикальна група кнопок</para></listitem>
+<listitem><para>Горизонтальні панелі</para></listitem>
+<listitem><para>Вертикальні панелі</para></listitem>
+<listitem><para>Записна книжка</para></listitem>
+<listitem><para>Рамка</para></listitem>
+<listitem><para>Вікно з прокручуванням </para></listitem>
+<listitem><para>Вікно перегляду</para></listitem>
+</itemizedlist>
+<para>Ви можете вкладати контейнери для створення складних структур розташування. Коли Ви створюєте горизонтальні і вертикальні контейнери, <application>Glade</application> запитує, скільки рядків або стовпців необхідно створити для початку, хоча рядки і стовпці можуть бути легко додані або видалені пізніше.</para>
+<para>Коли ви створили всі контейнери які Вам потрібні, можете додавати конкретні віджети такі як мітки, кнопки, і більш складні віджети в контейнери. Зверніть увагу, що <application>Glade</application> пакує віджети в макет і це усуває багато кропіткої роботи. Використання контейнерів для вікон дозволяє змінювати їхні розміри, щоб узгодити з використанням різними мовами, під час локалізації програми.</para></sect2>
+         <sect2 id="place-widgets-clipboard"> 
+                <title>Переміщення віджету в буфер обміну</title> 
+                <para lang="en">
+                  To remove a widget from a parent and place the widget on
+the clipboard,
+                  select the widget then choose 
+                  <menuchoice> 
+                         <guimenu>Edit</guimenu> 
+                         <guisubmenu>Cut</guisubmenu> 
+                  </menuchoice>. 
+                </para>
+         </sect2> 
+         <sect2 id="copy-widget-clipboard"> 
+                <title>Копіювання віджету в буфер обміну</title> 
+                <para lang="en">
+                  To copy a widget to the clipboard, select the widget then
+choose 
+                  <menuchoice> 
+                         <guimenu>Edit</guimenu> 
+                         <guisubmenu>Copy</guisubmenu> 
+                  </menuchoice>. The original widget remains attached to
+the parent. 
+                </para>
+         </sect2> 
+         <sect2 id="paste-widget-clipboard"> 
+                <title>Вставка віджету з буфера обміну в проект</title> 
+                <para lang="en">
+                  To paste a widget that exists on the clipboard into your
+project,
+                  choose 
+                  <menuchoice> 
+                         <guimenu>Edit</guimenu> 
+                         <guisubmenu>Paste</guisubmenu> 
+                  </menuchoice>.</para><para>Всі віджети повинні мати в межах <application>Glade</application> унікальне ім'я. Якщо Ви виріжете віджет, а потім вставите його в проект, віджет і всі його нащадки збережуть свої імена. Якщо ж Ви скопіюєте віджет та вставите його кілька разів в свій проект, тоді <application>Glade</application> створить нові імена для копій цього віджету.</para>
+         </sect2> 
+         <sect2 id="delete-widget"> 
+                <title>Видалення віджету</title> 
+                <para lang="en">To delete a widget from the parent without
+                  moving the widget to the clipboard, 
+                                select the widget then 
+                                choose 
+                                <menuchoice> 
+                                  <guimenu>Edit</guimenu> 
+                                  <guisubmenu>Delete</guisubmenu> 
+                                </menuchoice>. 
+                         </para>
+                 
+         </sect2> 
+         
+         <sect2 id="edit-widget"> 
+                <title>Зміна властивості віджету</title> 
+                <para>Редактор властивостей використовується для редагування властивостей вибраного віджету. Для того, щоб змінити властивість віджету, виберіть його і введіть відповідне значення в одне з полів вікна властивостей.</para>
+                
+                
+         </sect2> 
+  </sect1>
+  
+<sect1 id="about"> 
+    <title>Про програму Glade</title> 
+    <para>Glade підтримується розробниками Glade та волонтерами спільноти GNOME. Для того, щоб дізнатися більше про Glade, відвідайте <ulink url="http://glade.gnome.org" type="http">Веб-сайт Glade</ulink>.</para>
+    <para>Щоб повідомити про помилку або внести пропозицію відносно програми, або цього посібника, можете відправити їх за допомогою <ulink url="http://bugzilla.gnome.org/enter_bug.cgi?product=glade3" type="http">bugzilla</ulink>.</para>
+
+    <para>Іншим гарним джерелом інформації про Glade є списки розсилки <ulink url="http://lists.ximian.com/mailman/listinfo/glade-users" type="http">user</ulink> та <ulink url="http://lists.ximian.com/mailman/listinfo/glade-devel" type="http">developer</ulink> На додаток до підписки, Ви можете переглянути архіви списків розсилки, доступні через ці ж посилання.</para>
+
+    <para lang="en"> This program is distributed under the terms of the GNU
+      General Public license as published by the Free Software
+      Foundation; either version 2 of the License, or (at your option)
+      any later version. A copy of this license can be found at this
+      <ulink url="help:gpl" type="help">link</ulink>, or in the file
+      COPYING included with the source code of this program. </para>
+  </sect1> 
+
+</article>
